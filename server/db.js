@@ -16,6 +16,8 @@ const subjectSchema = new Schema({
     name: String,
     hourlyRate: Number
   }]
+}, {
+  _id: false
 });
 
 const tutorSchema = new Schema({
@@ -54,7 +56,7 @@ const tutorSchema = new Schema({
     required: true
   },
   profilePictureUrl: {
-    type: String,
+    type: String
   }
 });
 
