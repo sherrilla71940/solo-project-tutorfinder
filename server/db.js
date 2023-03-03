@@ -7,7 +7,6 @@ try {
   console.log('could not connect to db'. e.message);
 }
 
-
 const subjectSchema = new Schema({
   subject: {
     type: String,
@@ -15,7 +14,7 @@ const subjectSchema = new Schema({
   },
   branches: [{
     name: String,
-    hourlyWage: Number
+    hourlyRate: Number
   }]
 });
 
@@ -33,11 +32,11 @@ const tutorSchema = new Schema({
     required: true
   },
   availability: {
-    Monday: String,
-    Tuesday: String,
-    Wednesday: String,
-    Thursday: String,
-    Friday: String
+    Monday: [String],
+    Tuesday: [String],
+    Wednesday: [String],
+    Thursday: [String],
+    Friday: [String]
   },
   subjects: {
     type: [subjectSchema],
@@ -49,12 +48,17 @@ const tutorSchema = new Schema({
   },
   email: {
     type: String,
-    required: true
   },
-  introduction: String,
-  profilePictureUrl: {
+  introduction: {
     type: String,
     required: true
+  },
+  profilePictureUrl: {
+    type: String,
   }
 });
+
+const tutorModel = mongoose.model('Tutor', tutorSchema);
+
+module.exports = {tutorModel};
 
