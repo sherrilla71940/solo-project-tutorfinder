@@ -24,9 +24,8 @@ async function deleteTutor (req, res) {
   }
 }
 
-async function getTutor (req, res) {
-  const tutorEmail = req.params.email;
-  // console.log(tutorId)
+async function getTutorByEmail (req, res) {
+  const tutorEmail = req.query.email;
   try {
     const foundTutor = await tutorModel.findOne({email: tutorEmail});
     res.status(200);
@@ -63,4 +62,4 @@ async function postTutor (req, res) {
   }
 }
 
-module.exports = {getTutors, postTutor, getTutor, deleteTutor};
+module.exports = {getTutors, postTutor, getTutorByEmail, deleteTutor};

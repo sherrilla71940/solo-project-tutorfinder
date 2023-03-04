@@ -1,5 +1,4 @@
 async function getTutors () {
-  let tutors;
   fetch('http://localhost:1000')
     .then(res => res.json())
     .then(data =>  console.log(data));
