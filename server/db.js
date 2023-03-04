@@ -50,6 +50,7 @@ const tutorSchema = new Schema({
   },
   email: {
     type: String,
+    unique: true
   },
   introduction: {
     type: String,

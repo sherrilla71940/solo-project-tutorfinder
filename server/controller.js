@@ -25,17 +25,17 @@ async function deleteTutor (req, res) {
 }
 
 async function getTutor (req, res) {
-  const tutorId = req.params.id;
-  console.log(tutorId)
+  const tutorEmail = req.params.email;
+  // console.log(tutorId)
   try {
-    const foundTutor = await tutorModel.findById({_id: tutorId});
+    const foundTutor = await tutorModel.findOne({email: tutorEmail});
     res.status(200);
     res.send(foundTutor);
     // res.send('nothing');
   } catch (e) {
     console.log(e.message);
     res.status(400);
-    res.send('Could not find tutor by id:', tutorId);
+    res.send('Could not find tutor by email:', tutorEmail);
   }
 }
 

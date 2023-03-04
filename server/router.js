@@ -3,7 +3,7 @@ const controller = require('./controller');
 
 router.get('/', controller.getTutors);
 
-router.get('/tutor/:id', controller.getTutor);
+router.get('/tutor/:email', controller.getTutor);
 
 router.delete('/tutor/:id', controller.deleteTutor);
 
