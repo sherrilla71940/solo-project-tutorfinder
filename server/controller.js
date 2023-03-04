@@ -16,12 +16,11 @@ async function deleteTutor (req, res) {
   const tutorId = req.params.id;
   try {
     await tutorModel.deleteOne({ _id: tutorId });
-    res.status(200);
-    res.send('successfully deleted tutor by id:', tutorId);
+      res.status(200);
+      res.send('deleted');
   } catch (e) {
-    res.status(400);
-    res.send('could not delete tutor by id:', tutorId);
-    console.log(e);
+    res.status(404);
+    res.send('could not delete');
   }
 }
 
