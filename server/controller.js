@@ -50,7 +50,7 @@ async function postTutor (req, res) {
       teachingLocations: tutor.teachingLocations,
       email: tutor.email,
       introduction: tutor.introduction,
-      profile_picture: tutor.profile_picture
+      profilePictureUrl: tutor.profilePictureUrl
   });
   res.status(201);
   res.send('successfully posted new tutor');

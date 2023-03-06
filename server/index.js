@@ -12,6 +12,9 @@ app.use(cors({
     `http://${HOST}:3000`
 ]
 }));
+
+// seems like above cors is not necessary if using same host and http protocol
+
 app.use(express.json());
 app.use(router);
 
