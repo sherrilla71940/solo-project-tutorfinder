@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const controller = require('./controller');
 
-router.get('/', controller.getTutors);
+router.get('/tutors', controller.getTutors);
 
 router.get('/tutor', controller.getTutorByEmail);
 
