@@ -4,9 +4,9 @@ export async function getTutors (setter) {
     .then(data =>  setter(data));
 }
 
-export async function getTutor (email) {
+export async function getTutor (email, setter) {
   fetch(`http://localhost:1000/tutor?email=${email}`)
     .then(res => res.json())
-    .then(data => console.log(data));
+    .then(data => setter(data));
 }
 
