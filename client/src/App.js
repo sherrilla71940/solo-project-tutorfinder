@@ -23,9 +23,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path= '/' element= {<Tutors tutors={tutors}></Tutors>}/>
+        <Route path= '/tutors' element= {<Tutors tutors={tutors}></Tutors>}/>
         <Route path= '/hello' element = {<h1>hello</h1>}/>
-        <Route path= '/:email' element= {<TutorProfile/>}/>
+        <Route path= '/tutors/:email' element= {<TutorProfile/>}/>
         <Route path= '*' element = {<h1>Content not found</h1>}/>
       </Routes>
     </>
